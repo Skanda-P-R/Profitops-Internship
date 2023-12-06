@@ -43,6 +43,5 @@ As the name of the file indicates, this file is used just to call the functions 
 
 ### Incremental_Push_Function_Definition.ecl
 Consider files **order v1.csv** and **order v2.csv** which has the content as follows:
-[](https://github.com/Skanda-P-R/Integrating-MySQL-in-ECL/assets/115518870/1a5219cc-64cd-4d0b-a265-cd6dfb9e5e9b)
 
 
