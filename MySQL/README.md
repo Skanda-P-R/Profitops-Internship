@@ -1,4 +1,5 @@
 # Integrating MySQL in ECL
+### By Skanda P R
 **Step 1**: Install HPCC Cluster (Ignore if already installed)
 In my case, I have downloaded the VM file to run the HPCC Cluster. The last version of HPCC cluster available is v8.2.0-1. You can download it from here: https://d2wulyp08c6njk.cloudfront.net/releases/CE-Candidate-8.2.0/bin/vm/HPCCSystemsVM-amd64-8.2.0-1.ova
 Also download and install Oracle VM Virtual Box.
