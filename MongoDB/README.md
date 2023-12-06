@@ -28,6 +28,9 @@ Ensure 'OK'  for all servers.
 
 <h2>changestreams.ecl file-</h2>
 
+Unfortunately the MongoDB Plugin does'nt support the change streams feature yet, so we have embedded the python code in an ecl file which performs the same task.
+If in future , LexisNexis contacts us regarding the plugin modifications ,the code will be updated.
+
 
 
 
