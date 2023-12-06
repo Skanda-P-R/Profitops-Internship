@@ -1,0 +1,1 @@
+This section contains all the ecl files that are used to define the CSV, JSON and XML RECORD structures for the Unified Schema code along with the main ECL function DataRefine used to link the 3 different data sources together.
