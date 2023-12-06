@@ -41,4 +41,30 @@ This file contains different DML and DDL functions wrapped into a single module,
 As the name of the file indicates, this file is used just to call the functions which were created in test_dbDatabase.ecl.
 
 ### Incremental_Push_Function_Definition.ecl
-Consider files **order v1.csv** and **order v2.csv** which has the content as follows:
+Consider files order v1.csv and order v2.csv which has the content as follows:<br><br>**_order v1.csv_**
+| Order ID | Order Name           | Name    | Price  |
+|----------|----------------------|---------|--------|
+| 1        | iPhone 13            | Arun    | 75000  |
+| 2        | iPhone 14 Pro Max    | Skanda  | 85000  |
+| 3        | Samsung Earpods      | Shiv    | 5000   |
+| 4        | MacBook Pro          | Aneesh  | 90000  |
+| 5        | Samsung Z Fold       | Suhas   | 95000  |
+| 6        | iPhone 13 Mini       | Dheeraj | 70000  |
+| 7        | iPhone 15 Pro Max    | Nikhil  | 100000 |
+| 8        | iPhone 15            | Syed    | 98000  |
+| 9        | Samsung Z Flip       | Vaibhav | 98000  |
+| 10       | Samsung S23 Ultra    | Tejas   | 80000  |
+
+**_order v2.csv_**
+
+| Order ID | Order Name           | Name       | Price |
+|----------|----------------------|------------|-------|
+| 1        | iPhone 12            | Arun       | 50000 |
+| 11       | iPhone 12            | Shrivarsha | 50000 |
+| 12       | Samsung S23          | Shrinidi   | 80000 |
+| 13       | Samsung Earpods      | Skanda     | 5000  |
+| 2        | iPhone 14 Pro        | Skanda     | 75000 |
+| 14       | Samsung Earpods      | Arun       | 5002  |
+| 5        | iPhone 15            | Suhas      | 98000 |
+
+When these two files are merged, we should get an output like this:<br>
