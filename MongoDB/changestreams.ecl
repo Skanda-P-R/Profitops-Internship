@@ -9,11 +9,11 @@ client = MongoClient(Connection_string)              # Replace with your MongoDB
 mainDatabase='mydb' #enter database for historization here
 mainCollection='myCollection'                         #enter the collection within the main database
 history_db='historydb'                                #enter the database within which history will be stored
-history_Collection='historyVersion'                   #collection within which histor is to be stored 
+history_Collection='historyVersion'                   #collection within which history is to be stored 
 
 
 
-maindb=client[mainDatabase]
+maindb=client[mainDatabase]                               #CHECK THE CHANGESTREAMS.PY FILE FOR COMMENTS AND EXPLANATIONS OF THE PYTHON CODE.
 Collection =maindb[mainCollection]
 historydb=client[history_db]
 historyCollection=historydb[history_Collection]
