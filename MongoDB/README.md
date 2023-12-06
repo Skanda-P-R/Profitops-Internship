@@ -30,7 +30,9 @@ Ensure 'OK'  for all servers.
 
 1.Unfortunately the MongoDB Plugin does'nt support the change streams feature yet, so we have embedded the python code in an ecl file which performs the same task.
 We have raised this issue with the folks at LexisNexis.
+
 2.Change streams is a feature native to MongoDb and is not limited to python.It can be impented through other languages and frameworks such as Node.js,php,motor,ruby etc.
+
 3.It isnt compulsory to run the change streams in ecl.It can also be run independently as a python script .Also it is not compulsory for the change streams to be running on the HPCC cluster as an ecl job.It can run on anymachine as long as it is connected to the datacase.
 For more info on changeStreams-(https://www.mongodb.com/docs/manual/changeStreams/#open-a-change-stream)
 
