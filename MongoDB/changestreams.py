@@ -1,3 +1,6 @@
+'''
+This python program is an implementation of mongodb changestreams .It reads all the insert,update anddelete operations and creats history documents in anothe database.
+'''
 from pymongo import MongoClient
 Connection_string=''mongodb+srv://<user>:<pwd>@cluster0.smthng.mongodb.net/'    #connection string for atlas cluster containing user and password
 client = MongoClient(Connection_string)                       #initialising the mongoClient
