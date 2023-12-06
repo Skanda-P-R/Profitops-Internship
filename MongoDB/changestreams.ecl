@@ -3,11 +3,12 @@ INTEGER MAE(integer a) := EMBED(PY)
     
 
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://mukund1:mukund1@cluster0.9qg4zq9.mongodb.net/')  # Replace with your MongoDB connection string
+Connection_string='mongodb+srv://<user>:<pwd>@cluster0.smthng.mongodb.net/'
+client = MongoClient(Connection_string)              # Replace with your MongoDB connection string
 mainDatabase='mydb' #enter database for historization here
-mainCollection='myCollection' #enter the collection within the main database
-history_db='historydb' #enter the database within which history will be stored
-history_Collection='historyVersion' #collection within which histor is to be stored 
+mainCollection='myCollection'                         #enter the collection within the main database
+history_db='historydb'                                #enter the database within which history will be stored
+history_Collection='historyVersion'                   #collection within which histor is to be stored 
 
 
 
