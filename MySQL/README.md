@@ -68,3 +68,38 @@ Consider files order v1.csv and order v2.csv which has the content as follows:<b
 | 5        | iPhone 15            | Suhas      | 98000 |
 
 When these two files are merged, we should get an output like this:<br>
+| Order ID | Order Name           | Name       | Price |
+|----------|----------------------|------------|-------|
+| 1        | iPhone 12            | Arun       | 50000 |
+| 2        | iPhone 14 Pro        | Skanda     | 75000 |
+| 3        | Samsung Earpods      | Shiv       | 5000  |
+| 4        | MacBook Pro          | Aneesh     | 90000 |
+| 5        | iPhone 15            | Suhas      | 98000 |
+| 6        | iPhone 13 Mini       | Dheeraj    | 70000 |
+| 7        | iPhone 15 Pro Max    | Nikhil     | 100000|
+| 8        | iPhone 15            | Syed       | 98000 |
+| 9        | Samsung Z Flip       | Vaibhav    | 98000 |
+| 10       | Samsung S23 Ultra    | Tejas      | 80000 |
+| 11       | iPhone 12            | Shrivarsha | 50000 |
+| 12       | Samsung S23          | Shrinidi   | 80000 |
+| 13       | Samsung Earpods      | Skanda     | 5000  |
+| 14       | Samsung Earpods      | Arun       | 5002  |
+
+This is just an example, we can change the values in order version 2 CSV and still, the original table gets modified and gets stored in HPCC Cluster with logical name **spr::order_modified**. This is done using the functions defined in **Incremental_Push_Function_Definition.ecl** and these functions are called in **Incremental_Push_Function_Call.ecl**.<br>
+In addition to this, we also get the outputs
+| Order ID | Order Name           | Name       | Price |
+|----------|----------------------|------------|-------|
+| 11       | iPhone 12            | Shrivarsha | 50000 |
+| 12       | Samsung S23          | Shrinidi   | 80000 |
+| 13       | Samsung Earpods      | Skanda     | 5000  |
+| 14       | Samsung Earpods      | Arun       | 5002  |
+
+which specifies what new contents are added to the table and
+| Order ID | Order Name     | Name   | Price |
+|----------|----------------|--------|-------|
+| 1        | iPhone 12      | Arun   | 50000 |
+| 2        | iPhone 14 Pro  | Skanda | 75000 |
+| 5        | iPhone 15      | Suhas  | 98000 |
+
+which specifies the content which is modified in the table, so that the user can get to know what changes are there in both the order versions. All these are carried out by calling the get(), get_added() and get_modified() functions which are present in Incremental_Push_Function_Definition.ecl file.<br>
+<br>
