@@ -32,10 +32,37 @@ Then you can either type “exit;” or keep it running in the background.
 
 
 ### MySqlImport.ecl
-This code outputs a single string as a result which contains a module that can be used to access all the tables in the MySql database.
+This code outputs a single string as a result which contains a module that can be used to access all the tables in the MySql database. 
+<br>When we create a database called test_db in MySQL server using the command:
+<br>```CREATE DATABASE test_db;```
+<br>Then if we create a table using the command:<br>
+```
+CREATE TABLE test(
+        id int,
+        cid float,
+        pic50 float);
+```
+<br>Now if we run this ecl file, we will get the following output<br>
+```
+IMPORT MySql;
+EXPORT test_dbDatabase(string user, string password) := MODULE
+    EXPORT testRecord := RECORD
+        INTEGER4 id;
+        REAL4 cid;
+        REAL4 pic50;
+    END;
+END;
+```
+This functionality is used to create multiple functions in the next file.
 
 ### test_dbDatabase.ecl
-This file contains different DML and DDL functions wrapped into a single module, so that the functions can be called directly in other file.
+This file contains different DML and DDL functions wrapped into a single module, so that the functions can be called directly in other file.<br>
+<br>It consistes of:
+* Creating new tables in MySQL server.
+* Inserting contents from CSV and XML files, which are stored in the HPCC Cluster, to MySQL table.
+* Storing the contents of MySQL table to a Logical file in HPCC Cluster.
+* Deleting content from MySQL table.
+* Deleting the MySQL table.
 
 ### Function_Call.ecl
 As the name of the file indicates, this file is used just to call the functions which were created in test_dbDatabase.ecl.
