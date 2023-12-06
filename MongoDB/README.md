@@ -1,18 +1,12 @@
 <h1>MongoDB plugin</h1>
 
-Installation on local HPCC Cluster-
+<h3>Installation on local HPCC Cluster</h3>
 
 
 
 
 
-changestreams.ecl file-
-
-
-
-
-
-
+<h3>changestreams.ecl file-</h3>
 
 
 
@@ -20,7 +14,12 @@ changestreams.ecl file-
 
 
 
-display.ecl file-
+
+
+
+
+
+<h3>display.ecl file</h3>
 
 This display.ecl file connects to the MongoDB cluster , a RECORD structure has been created for a specific data schema , which is then sprayed onto the HPCC Cluster through the OUTPUT where the scope of Logical File has been mentioned .
 OVERWRITE helps to spray the latest versions of documents from the HistoryVersion Collection in MongoDB database.
