@@ -30,3 +30,16 @@ cid float,
 pic50 float);
 In test_tb table, we have to create it based on the content in the csv file. I am using a csv file which has three attributes id, cid and pic50. 
 Then you can either type “exit;” or keep it running in the background.
+
+
+### MySqlImport.ecl
+This code outputs a single string as a result which contains a module that can be used to access all the tables in the MySql database.
+
+### test_dbDatabase.ecl
+This file contains different DML and DDL functions wrapped into a single module, so that the functions can be called directly in other file.
+
+### Function_Call.ecl
+As the name of the file indicates, this file is used just to call the functions which were created in test_dbDatabase.ecl.
+
+### Incremental_Push_Function_Definition
+Consider a file order v1.csv
