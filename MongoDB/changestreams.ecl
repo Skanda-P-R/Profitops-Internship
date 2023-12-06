@@ -1,3 +1,4 @@
+//this ecl job runs embedeed python and is  an implementation of changestreams in an ecl job.It utilise the pymongo library.
 import python3 as py;
 INTEGER MAE(integer a) := EMBED(PY)
     
