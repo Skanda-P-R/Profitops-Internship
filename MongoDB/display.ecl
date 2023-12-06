@@ -1,8 +1,8 @@
 #OPTION('obfuscateOutput', TRUE);
 import MongoDB,$;
-server:='cluster0.9qg4zq9.mongodb.net';
-user:='mukund1';
-pwd:= 'mukund1';
+server:='cluster0.smthng.mongodb.net';
+user:='user';
+pwd:= 'pwd';
 databaseName:='mydb';
 collectionName:='myCollection1';
 
