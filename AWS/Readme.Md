@@ -20,3 +20,5 @@ a) go the lambda function --> select add trigger --> select source=s3, bucket=so
 b) put the lambda function in cron To do this go the lambda function --> select add trigger --> select cloud watch events --> select create new rule --> slect rule type as schedule expression --> type `rate(1 minute)`
 <br>
   This will run the lambda function every minute to monitor
+<br>
+For more details regarding this see the above versionUpdater(1).yaml file .
