@@ -18,4 +18,5 @@ a) go the lambda function --> select add trigger --> select source=s3, bucket=so
     This will add the trigger such that whenever a new version is added or a new file is created in the source_bucket the function will run to copy the verisons to       destination_bucket
 <br>
 b) put the lambda function in cron To do this go the lambda function --> select add trigger --> select cloud watch events --> select create new rule --> slect rule type as schedule expression --> type `rate(1 minute)`
+<br>
   This will run the lambda function every minute to monitor
