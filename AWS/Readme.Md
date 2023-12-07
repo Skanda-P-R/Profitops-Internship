@@ -13,6 +13,7 @@ For all the approaches the verisoning concept will be the same. Here the origina
     AWSLambdaRole	
 <br>
 <h4>Step 5:</h4> so now last step is to continuosly monitor source_bucket(awsbkt870) for upgraded versions or new files we should add the trigger. It can be done in two ways:
+<br>
 a) go the lambda function --> select add trigger --> select source=s3, bucket=source_bucket, event= all object create events --> select add
     This will add the trigger such that whenever a new version is added or a new file is created in the source_bucket the function will run to copy the verisons to       destination_bucket
 <br>
