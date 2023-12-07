@@ -7,8 +7,11 @@ For all the approaches the verisoning concept will be the same. Here the origina
 <h4>Step 3:</h4> Deploy the code
 <h4>Step 4:</h4> attach the following policies(in execution role) to the function so that it is able to do the operations
     AmazonS3ReadOnlyAccess	
+<br>
     AWSLambdaBasicExecutionRole	
+<br>
     AWSLambdaRole	
+<br>
 <h4>Step 5:</h4> so now last step is to continuosly monitor source_bucket(awsbkt870) for upgraded versions or new files we should add the trigger. It can be done in two ways:
 a) go the lambda function --> select add trigger --> select source=s3, bucket=source_bucket, event= all object create events --> select add
     This will add the trigger such that whenever a new version is added or a new file is created in the source_bucket the function will run to copy the verisons to       destination_bucket
