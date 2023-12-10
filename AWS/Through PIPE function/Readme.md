@@ -1,4 +1,4 @@
-<h1><b>The PIPE function of HPCC-ECL allows us to execute the terminal commands on the Landing Zone with the help of ECL</b></h1>
+<h1><b>AWS S3 CONNECTIVITY USING PIPE FUNCTION</b></h1>
 
 1. The commands executed using the PIPE() function in ECL are executed on the landing zone of the cluster. However, this function requires to be enabled to work with through ECL IDE. Using the pipe command, one can configure his AWS S3 credentials to AWS CLI, a useful command line tool for performing tasks related to AWS S3. A sample example can be shown below:
 ```
