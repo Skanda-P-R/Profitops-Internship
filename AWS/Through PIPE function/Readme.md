@@ -1,6 +1,6 @@
 <h1><b>AWS S3 CONNECTIVITY USING PIPE FUNCTION</b></h1>
 
-1. The commands executed using the PIPE() function in ECL are executed on the landing zone of the cluster. However, this function requires to be enabled to work with through ECL IDE. Using the pipe command, one can configure his AWS S3 credentials to AWS CLI, a useful command line tool for performing tasks related to AWS S3. A sample example can be shown below:
+1. PIPE function in ECL enables us to run terminal commands on the lanidding zone of the cluster. However, this function requires to be enabled to work with through ECL IDE. Using the pipe function, one can configure his AWS S3 credentials to AWS CLI, a useful command line tool for performing tasks related to AWS S3. A sample example can be shown below:
 ```
 rec := RECORD
     STRING message;
@@ -15,4 +15,4 @@ PIPE('aws configure set aws_access_key_id __youraccesskey__', rec, csv);
    
 6. However the task involves monitoring and keeping a constant check on any changes in the synced bucket. In case files of a specific format are removed/added to the bucket within a time frame, then the files of the format/folder are resprayed again due to these detections, since we sprayed a single file before and cannot remove the contents of an already sprayed file.
    
-7. The advantage of this approach is that is that is just requires PIPE authorization and AWS CLI installation on the cluster.Configuration, syncing and spraying can take place through 2 ECL files: <b>config_and_sync.ecl</b> and <b>detect_modification.ecl</b>. The detect_modification.ecl file involves python embedding and use of subprocess module to spray automatically in case of any modifications in the versions bucket. 
+7. The advantage of this approach is that is that it just requires PIPE authorization and AWS CLI installation on the cluster and not complete control over the cluster.Configuration, syncing and spraying take place through 2 ECL files: <b>config_and_sync.ecl</b> and <b>detect_modification.ecl</b>. The detect_modification.ecl file involves python embedding and the use of subprocess module to spray automatically in case of any modifications in the versions bucket. 
