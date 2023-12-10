@@ -6,7 +6,7 @@ END;    //you can define an arbitrary record structure for just the extraction p
 
 STRING regular := '.output_file_(\\d+)\\.csv..(.+)';//regular expression for files like: output_file_42.csv\410
 
-dat := DATASET('rxt', MyRecord, csv);//dataset under use
+dat := DATASET('rxt', MyRecord, csv);//dataset under use(sprayed folder)
 STRING file_name := '48';
 
 r := RECORD
