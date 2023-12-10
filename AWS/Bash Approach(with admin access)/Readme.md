@@ -67,7 +67,7 @@ The crontab has now opened. Give the following command to sync the bucket every 
 * * * * * /path/to/despray.sh
 ```
 
-<h2>7.	Incremental push</h2> The task of incremental datapush has definitions specific to various use cases. In this case, the use of incremental data push is to extract the modifications that occur between two versions of a file on the AWS bucket. This involved bringing the file(CSV, JSON or XML) from the bucket along with its new version and extracting these modifications. The file <b>incremental_push.ecl</b> demonstrates incremental push on a simple CSV file using ECL join functions.
+<h2>7.	Incremental push</h2> The task of incremental datapush has definitions specific to various use cases. In this case, the use of incremental data push is to extract the modifications that occur between two versions of a file on the AWS bucket. This involved bringing the file(CSV, JSON or XML) from the bucket along with its new version and extracting these modifications. The file <b>incremental_push_<file_format>.ecl</b> demonstrates incremental push on a simple CSV file using ECL join functions.
 
 
 
