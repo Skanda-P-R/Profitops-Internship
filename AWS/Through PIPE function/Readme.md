@@ -2,7 +2,7 @@
 
 1. PIPE function in ECL enables us to run terminal commands on the lanidding zone of the cluster. However, this function requires to be enabled to work with through ECL IDE. Using the pipe function, one can configure his AWS S3 credentials to AWS CLI, a useful command line tool for performing tasks related to AWS S3. A sample example can be shown below:
 ```
-rec := RECORD
+rec := RECORD   //a recod structure just to display the message of the command
     STRING message;
 END;
 PIPE('aws configure set aws_access_key_id __youraccesskey__', rec, csv);
