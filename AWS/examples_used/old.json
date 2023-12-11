@@ -1,0 +1,62 @@
+[
+  {
+    "id": "978-0062562822",
+    "name": "The Hidden Oracle",
+    "author": "Rick Riordan",
+    "details": [
+      {
+        "genre": "Fantasy",
+        "published_year": 2019,
+        "publisher": "Disney-Hyperion"
+      }
+    ]
+  },
+  {
+    "id": "978-1484746974",
+    "name": "Magnus Chase and the Gods of Asgard, Book 1: The Sword of Summer",
+    "author": "Rick Riordan",
+    "details": [
+      {
+        "genre": "Fantasy",
+        "published_year": 2015,
+        "publisher": "Disney-Hyperion"
+      }
+    ]
+  },
+  {
+    "id": "978-142310147-3",
+    "name": "Percy Jackson & the Olympians: The Lightning Thief",
+    "author": "Rick Riordan",
+    "details": [
+      {
+        "genre": "Fantasy",
+        "published_year": 2005,
+        "publisher": "Disney-Hyperion"
+      }
+    ]
+  },
+  {
+    "id": "978-148478064-6",
+    "name": "The Trials of Apollo, Book Two: The Dark Prophecy",
+    "author": "Rick Riordan",
+    "details": [
+      {
+        "genre": "Fantasy",
+        "published_year": 2017,
+        "publisher": "Disney-Hyperion"
+      }
+    ]
+  },
+  {
+    "id": "978-148471934-5",
+    "name": "The Kane Chronicles, Book One: The Red Pyramid",
+    "author": "Rick Riordan",
+    "details": [
+      {
+        "genre": "Fantasy",
+        "published_year": 2010,
+        "publisher": "Disney-Hyperion"
+      }
+    ]
+  }
+]
