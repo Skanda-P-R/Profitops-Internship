@@ -1,1 +1,29 @@
+<orders>
+    <order>
+        <orderID>101</orderID>
+        <orderLines>
+            <orderLine>
+                <product>RandomProduct1</product>
+                <quantity>3</quantity>
+            </orderLine>
+            <orderLine>
+                <product>RandomProduct2</product>
+                <quantity>7</quantity>
+            </orderLine>
+        </orderLines>
+    </order>
+    <order>
+        <orderID>102</orderID>
+        <orderLines>
+            <orderLine>
+                <product>RandomProduct3</product>
+                <quantity>2</quantity>
+            </orderLine>
+            <orderLine>
+                <product>RandomProduct4</product>
+                <quantity>5</quantity>
+            </orderLine>
+        </orderLines>
+    </order>
+</orders>
 
