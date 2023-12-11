@@ -12,8 +12,8 @@ DATASET(child_rec) details {XPATH('details')};
 END;
 
 
-ds_1 := DATASET('old::old.json',parent_rec,JSON('/'));
-ds_2 := DATASET('latest::latest.json',parent_rec,JSON('/'));
+ds_1 := DATASET('old::old.json',parent_rec,JSON('/'));  //original version
+ds_2 := DATASET('latest::latest.json',parent_rec,JSON('/'));  //modified version
 OUTPUT(ds_1, NAMED('ORIGINAL'));
 OUTPUT(ds_2, NAMED('MODIFIED'));
 
