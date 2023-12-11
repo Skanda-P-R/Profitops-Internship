@@ -16,8 +16,8 @@ END;
 
 
 
-ds_1 := DATASET('original.xml ',rform, JSON('orders/order'));//original file
-ds_2 := DATASET('modification.xml', rform,XML('orders/order'));//modified file with changes
+ds_1 := DATASET('orders_1.xml ',rform, JSON('orders/order'));//original file
+ds_2 := DATASET('orders_2.xml', rform,XML('orders/order'));//modified file with changes
 
 OUTPUT(ds_1, NAMED('ORIGINAL'));
 OUTPUT(ds_2, NAMED('MODIFIED'));
