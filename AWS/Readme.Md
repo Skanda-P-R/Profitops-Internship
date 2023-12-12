@@ -21,4 +21,4 @@ b) Put the lambda function in cron To do this go the lambda function --> select 
 <br>
   This will run the lambda function every minute to monitor
 <br>
-For more details regarding this see the above versionUpdater(1).yaml file .
+For more details regarding this see the above versionUpdater(1).yaml file . The example files for incremental_data_push.csv/xml/json are present in the examples_used directory.
