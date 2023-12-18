@@ -78,18 +78,19 @@ while True:
             l1[len(l1)-1] = l1[len(l1)-1][0:-1]
             l1 = "".join(l1)
             print(l1)
+            time.sleep(60) #directory is now synced with the bucket
             #WE HAVE TO RE-SYNC THE DIRECTORY AT THIS POINT -> 60 SECONDS WAITING PERIOD
             subprocess.run(dfu_command_in_del + l1, shell=True, check=True)
-            time.sleep(60) #directory is now synced with the bucket
+        
             synced_dir = os.listdir(dir)
             continue
         
         subprocess.run(["cd", directory_path], shell=True, check=True)
-        
+        time.sleep(60)
         # Run the dfuplus command
         subprocess.run(dfuplus_command, shell=True, check=True)
         synced_dir = os.listdir(dir)
-        time.sleep(60) #directory is now synced with the bucket
+       
 return 2
 ENDEMBED;
 
