@@ -1,6 +1,6 @@
 <h2>For integrating AWS with HPCC-platforms we have found 2 approaches as listed above. Each have their own Advantages and Limitations</h2>
 
-For all the approaches, the verisoning concept will be the same. Here the original files which are in their latest version are kept in one bucket(here awsbkt870) and their every other verisons are kept in another(here versions870). Following are the steps to get the versions in destination_bucket(versions870) from source_bucket(awsbkt870):
+For both the approaches, the verisoning concept will be the same. Here the original files which are in their latest version are kept in one bucket(here awsbkt870) and their every other verisons are kept in another(here versions870). Following are the steps to get the versions in destination_bucket(versions870) from source_bucket(awsbkt870):
 
 <h4>Step 1:</h4> Enable the versioning of the source_bucket
 <h4>Step 2:</h4> Create a lambda function on AWS and add the code in lambda_function.py in the above file. Change the bucket names according to yours
