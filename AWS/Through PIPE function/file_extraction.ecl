@@ -1,27 +1,39 @@
-IMPORT PYTHON3 AS Python;
-MyRecord := RECORD
-    STRING first_column;//just keep this a string
-   
-END;    //you can define an arbitrary record structure for just the extraction process 
+rec := RECORD
+    STRING c1;
+    STRING prim_key;
+    STRING Book_ID;
+    STRING Book_Name; 
+    //record structure
 
-STRING regular := '.output_file_(\\d+)\\.csv..(.+)';//regular expression for files like: output_file_42.csv\410
+END;
+STRING regular := '.(output_file_\\d+).csv..(.+)';//regular expression for files like: output_file_42.csv\410
 
-dat := DATASET('rxt', MyRecord, csv);//dataset under use(sprayed folder)
-STRING file_name := '48';
+dat := DATASET('rxt', rec, csv);//the sprayed folder
+OUTPUT(dat, NAMED('SPRAYED_FOLDER'));
+STRING file_name := 'output_file_4';
 
+regular_on_ds := REGEXFIND(regular, dat.c1, 1);
 r := RECORD
     STRING reg;  //introduce a new column to just store the file name/number
-    STRING first_column;  
+    STRING C1;  
+    STRING prim_key;
+    STRING Book_ID;
+    STRING Book_Name;
 END;
-r tra(dat l) := TRANSFORM//apply the transform based on flags to remove the file_name_strings appearing in the first column and shifting them into a new 'reg' column
-SELF.reg := REGEXFIND(regular, l.first_column, 1);
-SELF.first_column := IF(REGEXFIND(regular, l.first_column, 2)='', l.first_column,REGEXFIND(regular, l.first_column, 2));
-SELF:= L;
+
+r tra(dat l) := TRANSFORM
+SELF.reg := REGEXFIND(regular, l.c1, 1);
+SELF.c1 := IF(REGEXFIND(regular, l.c1, 2)='', l.c1,REGEXFIND(regular, l.c1, 2));
+SELF := l;
 END;
 
 myDS := PROJECT(dat, tra(LEFT));
+myDS;
 
-SET OF INTEGER indices(STREAMED DATASET(MyRecord) my_data, STRING file_number) := EMBED(Python)//iterate to find the index of the file number and index at which the file content of the specified file number stops
+
+IMPORT PYTHON3 AS Python;
+
+SET OF INTEGER indices(STREAMED DATASET(r) my_data, STRING file_number) := EMBED(Python)
   c=0
   t=0
   for i in my_data:
@@ -40,15 +52,11 @@ ENDEMBED;
 
 INTEGER s := indices(myDS, file_name)[1]; //start index
 INTEGER e := indices(myDS, file_name)[2]; //end index
-STREAMED DATASET(MyRecord) extract_from_indices(STREAMED DATASET(MyRecord) my_data,INTEGER n1, INTEGER n2) := EMBED(Python)//extract the dataset from indices
-cnt = 0
-l=[]
-for dat in my_data:
-    cnt = cnt+1
-    if (cnt>= n1 and cnt<=n2):
-          l.append(dat)
-return l
-ENDEMBED;
+OUTPUT(s, NAMED('INDEX_OF_START'));
+OUTPUT(e, NAMED('INDEX_OF_END'));
 
-OUTPUT(extract_from_indices(myDS[2..], s+1, s+e), NAMED('FILE_NAME_EXTRACTED'));//this is the final extracted file
-//you can check the folder_sprayed.csv file to see how a file like 'dat' looks like.
+
+INTEGER start := s +1;
+INTEGER ending := s + e;
+OUTPUT(myDS[start..ending], NAMED('THE_EXTRACTED_FILE'));//selected file is the output
+OUTPUT(myDS,,'tested::spray',NAMED('FILE_HAS_BEEN_SPRAYED'), OVERWRITE);//spraying the modifications back to the cluster
