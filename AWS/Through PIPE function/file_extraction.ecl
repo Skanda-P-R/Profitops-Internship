@@ -1,3 +1,4 @@
+IMPORT STD;
 rec := RECORD
     STRING c1;
     STRING prim_key;
@@ -6,9 +7,9 @@ rec := RECORD
     //record structure
 
 END;
-STRING regular := '.(output_file_\\d+).csv..(.+)';//regular expression for files like: output_file_42.csv\410
+STRING regular := '.(output_file_.+).csv(.+)';//regular expression for files like: output_file_42.csv\410
 
-dat := DATASET('rxt', rec, csv);//the sprayed folder
+dat := DATASET('pr::new_folder', rec, csv);//the sprayed folder
 OUTPUT(dat, NAMED('SPRAYED_FOLDER'));
 STRING file_name := 'output_file_4';
 
@@ -52,11 +53,15 @@ ENDEMBED;
 
 INTEGER s := indices(myDS, file_name)[1]; //start index
 INTEGER e := indices(myDS, file_name)[2]; //end index
-OUTPUT(s, NAMED('INDEX_OF_START'));
-OUTPUT(e, NAMED('INDEX_OF_END'));
+
 
 
 INTEGER start := s +1;
 INTEGER ending := s + e;
+OUTPUT(start, NAMED('INDEX_OF_START'));
+
+OUTPUT(ending, NAMED('INDEX_OF_END'));
 OUTPUT(myDS[start..ending], NAMED('THE_EXTRACTED_FILE'));//selected file is the output
-OUTPUT(myDS,,'tested::spray',NAMED('FILE_HAS_BEEN_SPRAYED'), OVERWRITE);//spraying the modifications back to the cluster
+OUTPUT(myDS,,'~mythor::spray_333',NAMED('FILE_HAS_BEEN_SPRAYED'), OVERWRITE);
+
+STD.File.DeSpray('~mythor::spray_333','10.0.2.15','bkt_desprayed/this_is_a_test_7.csv');//despray the file on the cluster
