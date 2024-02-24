@@ -23,7 +23,7 @@ def schema_to_record(fields):
     return "{"+','.join(ecl_fields)+"}"
 
 json_file_path = 'dispose/Shipment-schema.json'
-output_ecl_file_path = 'dispose/schema.ecl'
+output_ecl_file_path = 'dispose/RecordDefs.ecl'
 
 with open(json_file_path, 'r') as file:
     json_data = json.load(file)
@@ -31,6 +31,6 @@ with open(json_file_path, 'r') as file:
 result = schema_to_record(json_data['fields'])
 
 with open(output_ecl_file_path, 'w') as output_file:
-    output_file.write(result)
+    output_file.write("Export RecordDefs:="+result+";")
 
 print(f"Schema ECL written to {output_ecl_file_path}")
