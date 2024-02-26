@@ -1,7 +1,7 @@
 IMPORT STD;
 import $;
 
-rec := $.recordDfs.rec;
+rec := $.RecordDefs.rec;
 
 STRING regular := '.(output_file_.+).csv(.+)';//regular expression for files like: output_file_42.csv\410
 
