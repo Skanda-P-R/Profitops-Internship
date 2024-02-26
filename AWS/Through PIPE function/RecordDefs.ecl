@@ -1,4 +1,4 @@
-EXPORT recordDfs := MODULE
+EXPORT RecordDfs := MODULE
 EXPORT rec := RECORD
     STRING c1;
     STRING prim_key;
