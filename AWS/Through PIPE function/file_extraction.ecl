@@ -1,12 +1,7 @@
 IMPORT STD;
 import $;
 
-rec := RECORD
-    STRING c1;
-    STRING prim_key;
-    STRING Book_ID;
-    STRING Book_Name; 
-END;
+rec := $.RecDefs.rec;
 
 STRING regular := '.(output_file_.+).csv(.+)';//regular expression for files like: output_file_42.csv\410
 
